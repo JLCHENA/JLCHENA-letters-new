@@ -1,0 +1,64 @@
+/* 全局設定 */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: "Arial", sans-serif;
+    background-color: #F5F0E1; /* 淡米色背景 */
+    color: #4A322C; /* 深咖啡色文字 */
+    text-align: center;
+}
+
+/* 頂部導航 */
+nav ul {
+    list-style: none;
+    padding: 0;
+    background-color: #EEE2D0; /* 柔和色調 */
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    padding: 15px 0;
+}
+
+nav ul li {
+    margin: 0 15px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #4A322C;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+/* 主視覺區 */
+.hero {
+    background-color: #F5E6C4;
+    padding: 40px 0;
+    font-size: 32px;
+    font-weight: bold;
+}
+
+/* 內容區塊 */
+.content {
+    display: flex;
+    justify-content: center;
+    margin-top: 30px;
+}
+
+/* 卡片設計 */
+.card {
+    background-color: #FFF7E6;
+    padding: 20px;
+    width: 80%;
+    max-width: 600px;
+    border-radius: 10px;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* 頁尾 */
+footer {
+    margin-top: 30px;
+    padding: 15px;
+    font-size: 14px;
+    background-color: #EEE2D0;
+}
