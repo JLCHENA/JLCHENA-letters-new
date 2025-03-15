@@ -1,0 +1,9 @@
+title: JLCHENA Letters
+description: "懷舊與愛的記錄"
+baseurl: ""
+url: "https://jlchena-letters.com"
+
+collections:
+  letters:
+    output: true
+    permalink: /letters/:name/
