@@ -1,0 +1,15 @@
+---
+layout: default
+---
+
+<h1>{{ page.title }}</h1>
+<p><strong>日期：</strong> {{ page.date | date: "%Y-%m-%d" }}</p>
+<p><strong>作者：</strong> {{ page.author }}</p>
+
+<hr>
+
+<div class="letter-content">
+  {{ content }}
+</div>
+
+<a href="/letters/">← 回到所有信件</a>
