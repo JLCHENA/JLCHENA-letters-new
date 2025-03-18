@@ -1,0 +1,12 @@
+title: JLCHENA Letters
+description: "懷舊與愛的記錄"
+theme: jekyll-theme-primer
+
+plugins:
+  - jekyll-seo-tag
+  - jekyll-paginate
+
+future: true
+timezone: Asia/Taipei
+markdown: kramdown
+highlighter: rouge
