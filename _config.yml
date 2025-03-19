@@ -1,0 +1,9 @@
+title: JLCHENA Letters
+description: "這些年，從年輕到年老，寫給妳的，恰好見證了妳的美，也悄悄記錄了我的寂寞..."
+baseurl: ""
+url: "https://jlchena-letters.com"
+theme: minima
+
+plugins:
+  - jekyll-feed
+  - jekyll-seo-tag
