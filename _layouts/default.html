@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>{% if page.title %}{{ page.title }} | {% endif %}{{ site.title }}</title>
+
+    <!-- 網站描述（SEO） -->
+    <meta name="description" content="{{ site.description | default: site.title }}" />
+
+    <!-- 樣式連結 -->
+    <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}">
+
+    <!-- Favicon 可選 -->
+    <link rel="icon" href="{{ '/favicon.ico' | relative_url }}" />
+
+    <!-- SEO tag（如你有用 jekyll-seo-tag plugin） -->
+    {% seo %}
+
+  </head>
+  <body>
+    <header>
+      <h1><a href="{{ '/' | relative_url }}">{{ site.title }}</a></h1>
+      {% if site.tagline %}
+        <p>{{ site.tagline }}</p>
+      {% endif %}
+    </header>
+
+    <main>
+      {{ content }}
+    </main>
+
+    <footer>
+      <p>&copy; {{ site.time | date: '%Y' }} {{ site.author }}</p>
+    </footer>
+  </body>
+</html>
