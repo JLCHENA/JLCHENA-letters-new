@@ -1,35 +1,34 @@
 ---
 layout: default
-title: 歡迎
+title: 私人信件
 ---
 
-<!-- 歡迎詞 -->
-<h1 style="text-align:center;">歡迎來到我的信件集</h1>
+<script>
+function checkPassword() {
+    var password = prompt("請輸入密碼：");
+    var encoded = btoa(password); // 轉換成 Base64
+    if (encoded !== "bXlzZWNyZXQxMjM=") {  // 這裡替換成你的密碼的 Base64
+        alert("密碼錯誤");
+        window.location.href = "https://google.com"; // 錯誤時跳轉
+    }
+}
+checkPassword();
+</script>
 
-<!-- 背景音樂播放 -->
-<audio id="bgm" autoplay loop>
-  <source src="music/background.mp3" type="audio/mpeg">
-</audio>
+## 私人信件
 
-<!-- 信件列表 -->
+這些年，從年輕到年老，寫給妳的，恰好見證了妳的美，也悄悄記錄了我的寂寞……
+
+### 信件列表
+
 <ul>
   {% for post in site.posts %}
-    <li><a href="{{ post.url }}">{{ post.title }}</a></li>
+    <li>
+      <a href="{{ post.url }}">{{ post.title }}</a>
+      <small>（{{ post.date | date: "%Y 年 %m 月 %d 日" }}）</small>
+    </li>
   {% endfor %}
 </ul>
 
-<!-- 點擊信件連結時關閉音樂 -->
-<script>
-  document.addEventListener('DOMContentLoaded', function () {
-    const audio = document.getElementById('bgm');
-    const links = document.querySelectorAll('a[href*="/posts/"], a[href*="letters/"], a[href$=".html"]');
-    links.forEach(link => {
-      link.addEventListener('click', function () {
-        if (audio) {
-          audio.pause();
-          audio.currentTime = 0;
-        }
-      });
-    });
-  });
-</script>
+<br>
+<p>© 2025 JLCHENA Letters</p>
