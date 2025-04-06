@@ -34,20 +34,23 @@
     function checkPassword() {
       var password = prompt("請輸入密碼：");
       var encoded = btoa(password); // base64 encode
-      if (encoded !== "bXlzZWNyZXQxMjM=") {  // 請用你自己的 base64 密碼
+      if (encoded !== "bXlzZWNyZXQxMjM=") {  // 替換為你自己的 Base64 密碼
         alert("密碼錯誤");
         window.location.href = "https://google.com";
       } else {
-        // 密碼正確 → 播放音樂
+        alert("登入成功，音樂開始播放");
+
         var audio = document.createElement("audio");
         audio.src = "music/background.mp3";
-        audio.autoplay = true;
         audio.loop = true;
         audio.hidden = true;
         document.body.appendChild(audio);
+
+        audio.play().catch(function(error) {
+          console.log("播放失敗：", error);
+        });
       }
     }
-    // 頁面一開就執行密碼驗證
     window.onload = checkPassword;
   </script>
 </head>
