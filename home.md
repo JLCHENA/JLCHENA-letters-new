@@ -3,17 +3,6 @@ layout: default
 title: 私人信件
 ---
 
-<script>
-function checkPassword() {
-    var password = prompt("請輸入密碼：");
-    var encoded = btoa(password); // 轉換成 Base64
-    if (encoded !== "bXlzZWNyZXQxMjM=") {  // 這裡替換成你的密碼的 Base64
-        alert("密碼錯誤");
-        window.location.href = "https://google.com"; // 錯誤時跳轉
-    }
-}
-checkPassword();
-</script>
 
 ## 私人信件
 
