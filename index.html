@@ -28,34 +28,47 @@
       padding: 6px 14px;
       text-decoration: none;
       border-radius: 4px;
+      border: none;
+    }
+    .enter-link:hover {
+      background: rgba(255,255,255,0.6);
     }
   </style>
   <script>
     function checkPassword() {
       var password = prompt("請輸入密碼：");
       var encoded = btoa(password); // base64 encode
-      if (encoded !== "bXlzZWNyZXQxMjM=") {  // 替換為你自己的 Base64 密碼
+      if (encoded !== "bXlzZWNyZXQxMjM=") {  // 對應密碼是 mysecret123
         alert("密碼錯誤");
         window.location.href = "https://google.com";
       } else {
-        alert("登入成功，音樂開始播放");
-
-        var audio = document.createElement("audio");
-        audio.src = "music/background.mp3";
-        audio.loop = true;
-        audio.hidden = true;
-        document.body.appendChild(audio);
-
-        audio.play().catch(function(error) {
-          console.log("播放失敗：", error);
-        });
+        // 顯示進入按鈕
+        document.getElementById("enterButton").style.display = "inline-block";
       }
     }
+
+    function enterSite() {
+      var audio = document.createElement("audio");
+      audio.src = "music/background.mp3";
+      audio.loop = true;
+      audio.hidden = true;
+      document.body.appendChild(audio);
+
+      audio.play().then(function () {
+        window.location.href = "home.html";
+      }).catch(function (error) {
+        alert("音樂播放失敗：" + error.message);
+        window.location.href = "home.html";
+      });
+    }
+
     window.onload = checkPassword;
   </script>
 </head>
 <body>
   <div style="flex-grow: 1;"></div>
-  <a class="enter-link" href="home.html">進入網站</a>
+  <button id="enterButton" class="enter-link" onclick="enterSite()" style="display:none;">
+    進入網站
+  </button>
 </body>
 </html>
