@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "靠岸"
-date: 2011–12-05
+date: 2011-12-05
 categories: letters
 ---
 
